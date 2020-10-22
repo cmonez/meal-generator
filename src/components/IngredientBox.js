@@ -35,6 +35,7 @@ const Image = styled.div`
 const IngredientBox = () => {
   return (
     <Container>
+      {/* / */}
       <CenteredBox>
         <Row>
           <Image></Image>
