@@ -5,9 +5,12 @@ import IngredientBox from './components/IngredientBox';
 const App = () => {
   useEffect(() => {
     // code to run on component mount
-    axios
-      .get('https://www.themealdb.com/api/json/v1/1/random.php')
-      .then(({ data }) => console.log(data.meals[0]));
+    const mealUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
+    Promise.all(new Array(10).fill(mealUrl).map((ea) => axios.get(ea))).then(
+      (results) => {
+        console.log(results.map((meal) => meal.data.meals[0]));
+      }
+    );
   }, []);
   return (
     <div className="App">
