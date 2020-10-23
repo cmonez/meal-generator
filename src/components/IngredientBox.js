@@ -18,10 +18,11 @@ const CenteredBox = styled.div`
 `;
 
 const Row = styled.div`
-  background-color: pink;
+  background-color: #d7e3f5;
   width: 100%;
   min-height: 20%;
   display: flex;
+  padding-top: 10px;
 `;
 
 const Image = styled.div`
@@ -32,11 +33,17 @@ const Image = styled.div`
   background-repeat: no-repeat;
 `;
 
+const IngredientSpan = styled.div`
+  padding: 5%;
+  font: 20px Arial, sans-serif;
+`;
+
 const IngredientBox = ({ meals }) => {
   const rowOfPhotos = meals.map((meal, i) => {
     return (
       <Row>
         <Image imageUrl={meals[i].strMealThumb}></Image>
+        <IngredientSpan>{meals[i].strMeal}</IngredientSpan>
       </Row>
     );
   });
