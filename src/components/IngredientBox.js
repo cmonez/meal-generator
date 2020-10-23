@@ -9,20 +9,27 @@ const Container = styled.div`
 `;
 
 const CenteredBox = styled.div`
-  background-color: blue;
-  width: 75%;
+  /* background-color: blue; */
+  width: 55%;
   max-height: 100%;
   display: flex;
   flex-direction: column;
   overflow: auto;
+  opacity: 1;
+  background-image: url("${process.env.PUBLIC_URL}/chefskiss.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-size: cover;
 `;
 
 const Row = styled.div`
-  background-color: #d7e3f5;
+  /* background-color: #d7e3f5; */
   width: 100%;
   min-height: 20%;
   display: flex;
   padding-top: 10px;
+  /* opacity: 1; */
 `;
 
 const Image = styled.div`
