@@ -18,7 +18,7 @@ const App = () => {
         setMeals(mealData);
       }
     );
-  }, [meals]);
+  }, []);
   return (
     <div className="App">
       <header className="App-header"></header>
