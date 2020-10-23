@@ -23,7 +23,7 @@ const App = () => {
     <div className="App">
       <header className="App-header"></header>
       <h2>Hungry?</h2>
-      <IngredientBox />
+      <IngredientBox meals={meals} />
     </div>
   );
 };

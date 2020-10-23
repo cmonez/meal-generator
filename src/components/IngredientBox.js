@@ -25,31 +25,24 @@ const Row = styled.div`
 `;
 
 const Image = styled.div`
-  background-image: url('https://www.themealdb.com//images//media//meals//qtwtss1468572261.jpg');
+  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
   height: 100%;
   width: 15%;
   background-size: contain;
   background-repeat: no-repeat;
 `;
 
-const IngredientBox = () => {
+const IngredientBox = ({ meals }) => {
+  const rowOfPhotos = meals.map((meal, i) => {
+    return (
+      <Row>
+        <Image imageUrl={meals[i].strMealThumb}></Image>
+      </Row>
+    );
+  });
   return (
     <Container>
-      {/* / */}
-      <CenteredBox>
-        <Row>
-          <Image></Image>
-        </Row>
-        <Row>s</Row>
-        <Row>s</Row>
-        <Row>s</Row>
-        <Row>s</Row>
-        <Row>s</Row>
-        <Row>s</Row>
-        <Row>s</Row>
-        <Row>s</Row>
-        <Row>s</Row>
-      </CenteredBox>
+      <CenteredBox>{rowOfPhotos}</CenteredBox>
     </Container>
   );
 };
